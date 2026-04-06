@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô tả cách làm - Tôn Gia Lạc</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            line-height: 1.5;
+            padding: 50px;
+            max-width: 900px;
+            margin: auto;
+            color: #000;
+        }
+        h1 { text-align: center; text-transform: uppercase; }
+        h2 { border-bottom: 1px solid #000; padding-bottom: 5px; margin-top: 30px; }
+        .info { text-align: center; font-weight: bold; margin-bottom: 40px; }
+        .back-link { display: block; margin-top: 50px; text-align: center; color: blue; }
+    </style>
+</head>
+<body>
+
+    <h1>BÁO CÁO THỰC HIỆN DỰ ÁN MOVIE DISCOVERY APP</h1>
+    
+    <div class="info">
+        Họ và tên: TÔN GIA LẠC <br>
+        Mã số sinh viên: 231A010758
+    </div>
+
+    <h2>TỔNG QUAN</h2>
+    <p>Dự án Movie Discovery App được xây dựng để giúp người dùng dễ dàng tìm kiếm và lọc các bộ phim yêu thích theo tên hoặc thể loại trực quan trên nền tảng web.</p>
+
+    <h2>BÀI 1: GIAO DIỆN VÀ BỐ CỤC</h2>
+    <ul>
+        <li>Sử dụng <strong>CSS Grid</strong> để chia bố cục trang thành 2 phần: Sidebar bên trái rộng 250px và nội dung chính bên phải.</li>
+        <li>Tạo tính năng chuyển đổi giao diện <strong>Sáng/Tối (Dark Mode)</strong> bằng cách sử dụng các biến CSS Variables.</li>
+        <li>Thiết kế các thẻ Movie Card có hiệu ứng phóng to và đổ bóng khi di chuột qua (hover).</li>
+    </ul>
+
+    <h2>BÀI 2: LOGIC VÀ TƯƠNG TÁC VỚI DỮ LIỆU</h2>
+    <ul>
+        <li>Dữ liệu phim được quản lý tập trung trong một mảng đối tượng <code>movies</code>.</li>
+        <li>Xây dựng tính năng tự động tạo các ô Checkbox thể loại phim từ dữ liệu gốc.</li>
+        <li>Áp dụng kỹ thuật <strong>Debounce</strong> (trễ 400ms) cho thanh tìm kiếm để tối ưu hóa hiệu suất ứng dụng.</li>
+        <li>Kết hợp đồng thời bộ lọc tên phim và bộ lọc nhiều thể loại phim cùng lúc.</li>
+    </ul>
+
+    <h2>BÀI 3: TRẢI NGHIỆM VÀ SÁNG TẠO</h2>
+    <ul>
+        <li>Xây dựng cửa sổ <strong>Modal</strong> hiển thị đầy đủ thông tin chi tiết (đạo diễn, diễn viên, nội dung) khi người dùng nhấn vào thẻ phim.</li>
+        <li>Sử dụng <strong>localStorage</strong> để lưu giữ trạng thái giao diện người dùng (Sáng hoặc Tối) ngay cả khi tải lại trang.</li>
+        <li>Tích hợp liên kết dẫn đến kết quả <strong>Bài tập 34</strong> trực tiếp trên thanh Menu của ứng dụng.</li>
+    </ul>
+
+    <h2>GHI CHÚ TRIỂN KHAI</h2>
+    <p>Dự án đã được kiểm tra kỹ lưỡng về khả năng tương thích, nén ảnh để tối ưu tốc độ và sẵn sàng để triển khai lên các nền tảng hosting.</p>
+
+    <a href="index.html" class="back-link">Quay lại Movie App</a>
+
+</body>
+</html>

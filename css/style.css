@@ -1,0 +1,200 @@
+/* CSS Variables cho Light/Dark Mode */
+:root {
+    --bg-color: #f4f4f9;
+    --text-color: #333;
+    --sidebar-bg: #fff;
+    --card-bg: #fff;
+    --primary-color: #007bff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --hover-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+
+/* Ghi đè biến khi ở Dark Mode */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --sidebar-bg: #1e1e1e;
+    --card-bg: #1e1e1e;
+    --primary-color: #bb86fc;
+    --shadow: 0 4px 6px rgba(0,0,0,0.5);
+    --hover-shadow: 0 10px 15px rgba(0,0,0,0.8);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--sidebar-bg);
+    box-shadow: var(--shadow);
+}
+
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.theme-btn {
+    padding: 8px 15px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Layout Chính (CSS Grid) */
+.app-container {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar 250px, Main tự co giãn */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.checkbox-list label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+/* Main Content & Movie Grid */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Movie Card */
+.movie-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Phóng to nhẹ */
+    box-shadow: var(--hover-shadow);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h4 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.movie-info p {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    color: var(--text-color);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.modal-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.modal-body-grid img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr; /* Trở thành 1 cột trên Mobile/Tablet */
+    }
+    .modal-body-grid {
+        grid-template-columns: 1fr; /* Cột dọc trên Mobile */
+    }
+}
